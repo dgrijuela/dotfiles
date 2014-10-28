@@ -9,6 +9,8 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
  
+Plugin 'bling/vim-airline'
+
 " Ruby
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
@@ -52,6 +54,7 @@ set cursorline
 
 set backspace=indent,eol,start
 set iskeyword+=-
+set laststatus=2
 
 let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("e")': ['<c-t>'],
