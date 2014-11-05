@@ -10,6 +10,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
  
 Plugin 'bling/vim-airline'
+set t_Co=256
 
 " Ruby
 Plugin 'vim-ruby/vim-ruby'
@@ -21,6 +22,7 @@ Plugin 'tpope/vim-fugitive'
 
 " Languages and markup
 Plugin 'othree/html5.vim'
+
 Plugin 'mattn/emmet-vim'
 let g:user_emmet_leader_key='<c-z>'
 Plugin 'tpope/vim-haml'
