@@ -58,6 +58,10 @@ set backspace=indent,eol,start
 set iskeyword+=-
 set laststatus=2
 
+" Will allow you to use :w!! to write to a file using sudo if you forgot to
+" sudo vim file (it will prompt for sudo password when writing)
+cmap w!! %!sudo tee > /dev/null %
+
 let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("e")': ['<c-t>'],
     \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
