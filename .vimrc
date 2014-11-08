@@ -72,6 +72,10 @@ map <C-c> y:e ~/clipsongzboard<CR>P:w !pbcopy<CR><CR>:bdelete!<CR>
 
 set encoding=utf-8
 set showcmd                     " display incomplete commands
+set number                      " display line number
+set confirm                     " dialog when :w or :q fails
+set hidden                      " remember undo after quitting
+set history=50                  " keep 50 lines of command history
  
 "" Whitespace
 set nowrap                      " don't wrap lines
