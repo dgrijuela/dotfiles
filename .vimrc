@@ -9,10 +9,11 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
  
+" status bar
 Plugin 'bling/vim-airline'
 set t_Co=256
 
-" Ruby
+" ruby
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-rake'
@@ -20,7 +21,7 @@ Plugin 'tpope/vim-rake'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
 
-" Languages and markup
+" languages and markup
 Plugin 'othree/html5.vim'
 
 Plugin 'mattn/emmet-vim'
@@ -45,34 +46,34 @@ let g:ctrlp_cmd = 'CtrlP'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 map <c-o> :CtrlPBuffer<CR>
+let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<c-t>'],
+    \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+    \ }
 
 call vundle#end()            " required
 
 filetype plugin indent on " required!
 syntax on
 
-set completefunc=syntaxcomplete#Complete
-set cursorline
-
-set backspace=indent,eol,start
-set iskeyword+=-
-set laststatus=2
-
-" Will allow you to use :w!! to write to a file using sudo if you forgot to
-" sudo vim file (it will prompt for sudo password when writing)
+" will allow you to use :w!! to write to a file using sudo if you forgot to
+"   sudo vim file (it will prompt for sudo password when writing)
 cmap w!! %!sudo tee > /dev/null %
-
-let g:ctrlp_prompt_mappings = {
-    \ 'AcceptSelection("e")': ['<c-t>'],
-    \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
-    \ }
 
 " Enable copying to clipboard using `CTRL + c`
 map <C-c> y:e ~/clipsongzboard<CR>P:w !pbcopy<CR><CR>:bdelete!<CR>
 
+" display settings
+set completefunc=syntaxcomplete#Complete
+set cursorline
+set backspace=indent,eol,start
+set iskeyword+=-
+set laststatus=2
 set encoding=utf-8
 set showcmd                     " display incomplete commands
 set number                      " display line number
+
+" system settings
 set confirm                     " dialog when :w or :q fails
 set hidden                      " remember undo after quitting
 set history=50                  " keep 50 lines of command history
