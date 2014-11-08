@@ -72,6 +72,7 @@ set laststatus=2
 set encoding=utf-8
 set showcmd                     " display incomplete commands
 set number                      " display line number
+set wildignore=*.o,*.obj,*.bak,*.exe
 
 " system settings
 set confirm                     " dialog when :w or :q fails
