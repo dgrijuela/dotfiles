@@ -3,3 +3,6 @@
 	email = danielgrijuela@gmail.com
 [alias]
   st = status
+[core]
+	autocrlf = input
+	safecrlf = true
