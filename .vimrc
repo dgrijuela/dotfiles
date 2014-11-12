@@ -13,6 +13,10 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'bling/vim-airline'
 set t_Co=256
 
+" git in line number
+Plugin 'airblade/vim-gitgutter'
+highlight clear SignColumn
+
 " ruby
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
