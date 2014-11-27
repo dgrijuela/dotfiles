@@ -17,6 +17,10 @@ set t_Co=256
 Plugin 'airblade/vim-gitgutter'
 highlight clear SignColumn
 
+" autosave
+Plugin 'vim-scripts/vim-auto-save'
+let g:auto_save = 1
+
 " ruby
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
