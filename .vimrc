@@ -26,12 +26,12 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-rake'
 
-Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
 
 " languages and markup
 Plugin 'othree/html5.vim'
-
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'skwp/greplace.vim'
 Plugin 'mattn/emmet-vim'
 let g:user_emmet_leader_key='<c-z>'
 Plugin 'tpope/vim-haml'
@@ -54,10 +54,6 @@ let g:ctrlp_cmd = 'CtrlP'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 map <c-o> :CtrlPBuffer<CR>
-let g:ctrlp_prompt_mappings = {
-    \ 'AcceptSelection("e")': ['<c-t>'],
-    \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
-    \ }
 
 call vundle#end()            " required
 
@@ -70,6 +66,9 @@ cmap w!! %!sudo tee > /dev/null %
 
 " Enable copying to clipboard using `CTRL + c`
 map <C-c> y:e ~/clipsongzboard<CR>P:w !pbcopy<CR><CR>:bdelete!<CR>
+
+" close NERDTree when exiting
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " display settings
 set completefunc=syntaxcomplete#Complete
