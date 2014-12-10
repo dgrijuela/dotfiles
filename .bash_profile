@@ -67,7 +67,7 @@ function __jobs {
     echo "* "
   fi
 }
-PS1='\[\033[31m\]$(__jobs \j)\[\033[00m\]\u@\h:\w\[\033[32m\]$(__git_ps1)\[\033[00m\]\$ '
+PS1='\[\033[33m\]$(__jobs \j)\[\033[33m\]\u\[\033[00m\]@\[\033[32m\]\h\[\033[00m\]:\[\033[34m\]\w\[\033[35m\]$(__git_ps1)\[\033[00m\]\$ '
 
 set show-all-if-ambiguous on
 set completion-ignore-case on
