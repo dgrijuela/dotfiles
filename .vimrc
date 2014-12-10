@@ -1,7 +1,8 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
-set swapfile
-set dir=~/tmp
+set nobackup
+set nowritebackup
+set noswapfile
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
