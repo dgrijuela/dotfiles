@@ -103,7 +103,6 @@ filetype plugin indent on
 
 " Fuck semicolon
 nnoremap ; :
-nnoremap : ;
 
 " Open current file in Google Chrome
 nmap <silent> <leader>g :!google-chrome % &

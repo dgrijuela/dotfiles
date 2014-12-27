@@ -6,7 +6,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="vimrc zshrc bashrc gitconfig"  # list of files/folders to symlink in homedir
+files="vimrc zshrc gitconfig"     # list of files/folders to symlink in homedir
 theme=dgrijuela.zsh-theme         # custom theme
 plugin=dgrijuela.plugin.zsh       # custom plugin
 
