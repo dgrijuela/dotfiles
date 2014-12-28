@@ -25,7 +25,11 @@ echo "Cloning vundle inside vim to install vim plugins and then installing them"
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 echo "This is for the plugin YouCompleteMe"
-sudo apt-get -y install python-dev cmake
+if [ "$(uname)" == "Linux" ];, then
+  sudo apt-get -y install python-dev cmake
+elif [ "$(uname)" == "Darwin" ]; then
+  brew install python # macvim, hope it works without it
+fi
 cd ~/.vim/bundle/YouCompleteMe
 ./install.sh --clang-completer
 
