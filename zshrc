@@ -1,6 +1,9 @@
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="dgrijuela"
 
+export LC_CTYPE=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 COMPLETION_WAITING_DOTS="true"
 
 source $ZSH/oh-my-zsh.sh
@@ -8,7 +11,14 @@ plugins=(git bundler brew gem)
 
 # Aliases
 
-## Git aliases
+## General
+alias cp="cp -iv" # v is for verbose, i is to ask confirmation to override
+alias rm="rm -iv"
+alias mv="mv -iv"
+alias ls="ls -Fgh" # f is for file types, g to colorize, h to follow symbolic linkks
+alias la="ls -al" # same with hidden files
+
+## Git
 alias ga='git add'
 alias gp='git push'
 alias gl='git log'
@@ -32,22 +42,41 @@ alias gpp='git pull --rebase && git push'
 alias gmf='git merge --ff-only'
 alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
 
-## Vagrant aliases
+## Vagrant
 alias vag='vagrant'
 alias vagup='vagrant up'
 alias vagdestroy='vagrant destroy'
 alias vagssh='vagrant ssh'
 alias vaghalt='vagrant halt'
 
-## Curl aliases
+## Curl
 alias post="curl -i -X POST"
 alias get="curl -i -X GET"
 alias put="curl -i -X PUT"
 
-# Quickly find files that contain a string in a directory
+## Databases (future)
+# alias mongo.start='ulimit -Sn 1024; mongod --config /usr/local/etc/mongod.conf'
+# alias mongo.stop='kill $(cat /usr/local/var/run/mongod.pid) && rm /usr/local/var/run/mongod.pid'
+# alias pg.start='pg_ctl start -D /usr/local/var/db/postgresql -l /usr/local/var/log/postgres.log'
+# alias pg.stop='pg_ctl stop -D /usr/local/var/db/postgresql'
+# alias pg.status='pg_ctl status -D /usr/local/var/db/postgresql'
+# alias redis.start='redis-server /usr/local/etc/redis.conf'
+# alias redis.stop='kill $(cat /usr/local/var/run/redis.pid)'
+
+# Functions
+
+## Find files that contain a string in a directory
 qfind () {
   find . -exec grep -l -s $1 {} \;
   return 0
+}
+
+## Serve current directory
+serve() {
+  port="${1:-3000}"
+  echo "Serving on http://localhost:$port"
+  echo "\n\n"
+  ruby -run -e httpd . -p $port
 }
 
 # Use vim as editor if present
@@ -66,3 +95,5 @@ if [ -f $HOME/.profile ]; then
 fi
 
 export PATH="/home/kln2d/.rvm/gems/ruby-2.1.5/bin:/home/kln2d/.rvm/gems/ruby-2.1.5@global/bin:/home/kln2d/.rvm/rubies/ruby-2.1.5/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/kln2d/.rvm/bin:/home/kln2d/.rvm/bin"
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
