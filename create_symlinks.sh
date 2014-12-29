@@ -3,19 +3,20 @@
 # This script creates symlinks from the home directory to my
 # desired dotfiles which are in ~/dotfiles
 
+dir=~/dotfiles                    # absolute paths
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="vimrc zshrc gitconfig bashrc bash_profile"     # list of files/folders to symlink in ~
+files="vimrc zshrc gitconfig"     # list of files/folders to symlink in ~
 theme=dgrijuela.zsh-theme         # custom theme
 plugin=dgrijuela.plugin.zsh       # custom plugin
 
 echo "Creating $olddir to backup any existing dotfiles in ~"
 mkdir -p $olddir
 
+echo "Moving conflicting dotfiles from ~ to $olddir"
 for file in $files; do
-    echo "Moving any conflicting dotfiles from ~ to $olddir"
     mv ~/.$file ~/dotfiles_old/
     echo "Creating symlink to $file in home directory"
-    ln -s $file ~/.$file
+    ln -s $dir/$file ~/.$file
 done
 
 echo "Cloning vundle inside vim to install vim plugins and then installing them"
@@ -25,18 +26,22 @@ echo "Installing vim plugin YouCompleteMe"
 if [ "$(uname)" == "Linux" ]; then
   sudo apt-get -y install python-dev cmake
 elif [ "$(uname)" == "Darwin" ]; then
-  brew install python3 # macvim, hope it works without it
+  brew install cmake python # macvim, hope it works without it
+  brew unlink python # I don't understand it neither, but doesn't work without it
 fi
 cd ~/.vim/bundle/YouCompleteMe
 ./install.sh --clang-completer
 
 echo "Installing zsh and making it the default shell"
-sudo apt-get -y install zsh
+if [ "$(uname)" == "Linux" ]; then
+  sudo apt-get -y install zsh # mac comes with it
+fi
 chsh -s $(which zsh)
+
 echo "Cloning oh-my-zsh to make zsh even more awesome"
 git clone http://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 
 echo "Creating symlinks for my custom theme and plugin for oh-my-zsh"
-ln -s oh-my-zsh/custom/$theme ~/.oh-my-zsh/custom/$theme
+ln -s $dir/oh-my-zsh/custom/$theme ~/.oh-my-zsh/custom/$theme
 mkdir ~/.oh-my-zsh/custom/plugins/dgrijuela
-ln -s oh-my-zsh/custom/plugins/dgrijuela/$plugin ~/.oh-my-zsh/custom/plugins/dgrijuela/$plugin
+ln -s $dir/oh-my-zsh/custom/plugins/dgrijuela/$plugin ~/.oh-my-zsh/custom/plugins/dgrijuela/$plugin
