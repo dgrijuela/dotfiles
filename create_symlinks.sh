@@ -26,8 +26,8 @@ echo "Installing vim plugin YouCompleteMe"
 if [ "$(uname)" == "Linux" ]; then
   sudo apt-get -y install python-dev cmake
 elif [ "$(uname)" == "Darwin" ]; then
-  brew install cmake python # macvim, hope it works without it
-  brew unlink python # I don't understand it neither, but doesn't work without it
+  brew install cmake python
+  echo "if vim doesn't work, brew unlink python"
 fi
 cd ~/.vim/bundle/YouCompleteMe
 ./install.sh --clang-completer
