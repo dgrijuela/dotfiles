@@ -34,7 +34,8 @@
   last = "log -1 --pretty=format:'%Cgreen%ci %Cred%cr%Creset'"
 
 [core]
-  editor = /usr/bin/vim
+  editor = vim
+	excludesfile = ~/.gitignore
 
 [color]
   ui = true
