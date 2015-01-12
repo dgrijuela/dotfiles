@@ -31,11 +31,11 @@ alias gmf='git merge --ff-only'
 alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
 
 ## Vagrant aliases
-alias vag='vagrant'
-alias vagup='vagrant up'
-alias vagdestroy='vagrant destroy'
-alias vagssh='vagrant ssh'
-alias vaghalt='vagrant halt'
+alias vu='vagrant up'
+alias vr='vagrant reload --provision'
+alias vd='vagrant destroy'
+alias vs='vagrant ssh'
+alias vh='vagrant halt'
 
 ## Curl aliases
 alias post="curl -i -X POST"
@@ -64,8 +64,11 @@ if [ -f $HOME/.profile ]; then
 fi
 
 # Path depending on OS
-if [ "$(uname)" == "Linux" ]; then
+if [ $(uname) '==' "Linux" ]; then
   export PATH="/home/kln2d/.rvm/gems/ruby-2.1.5/bin:/home/kln2d/.rvm/gems/ruby-2.1.5@global/bin:/home/kln2d/.rvm/rubies/ruby-2.1.5/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/kln2d/.rvm/bin:/home/kln2d/.rvm/bin"
-elif [ "$(uname)" == "Darwin" ]; then
+elif [ $(uname) '==' "Darwin" ]; then
   export PATH="$PATH:$HOME/.rvm/bin"
 fi
+
+# Go to code folder by default
+cd ~/code
