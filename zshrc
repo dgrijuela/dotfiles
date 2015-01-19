@@ -32,6 +32,7 @@ alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
 
 ## Ruby/Rails aliases
 alias rc='rails console'
+alias rs='rails server'
 
 ## Vagrant aliases
 alias vu='vagrant up'
