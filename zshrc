@@ -30,6 +30,9 @@ alias gpp='git pull --rebase && git push'
 alias gmf='git merge --ff-only'
 alias gwc='git whatchanged -p --abbrev-commit --pretty=medium'
 
+## Ruby/Rails aliases
+alias rc='rails console'
+
 ## Vagrant aliases
 alias vu='vagrant up'
 alias vr='vagrant reload --provision'
