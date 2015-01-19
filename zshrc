@@ -63,12 +63,7 @@ if [ -f $HOME/.profile ]; then
   source $HOME/.profile
 fi
 
-# Path depending on OS
-if [ $(uname) '==' "Linux" ]; then
-  export PATH="/home/kln2d/.rvm/gems/ruby-2.1.5/bin:/home/kln2d/.rvm/gems/ruby-2.1.5@global/bin:/home/kln2d/.rvm/rubies/ruby-2.1.5/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/kln2d/.rvm/bin:/home/kln2d/.rvm/bin"
-elif [ $(uname) '==' "Darwin" ]; then
-  export PATH="$PATH:$HOME/.rvm/bin"
-fi
+export PATH="$PATH:$HOME/.rvm/bin"
 
 # Go to code folder by default
 cd ~/code
