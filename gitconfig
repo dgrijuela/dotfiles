@@ -38,7 +38,9 @@
 	excludesfile = ~/.gitignore
 
 [color]
-  ui = true
+	ui = 1
 
 [push]
   default = matching
+[help]
+	autocorrect = 1

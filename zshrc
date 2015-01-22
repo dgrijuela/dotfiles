@@ -11,14 +11,15 @@ plugins=(git bundler brew gem)
 ## Git aliases
 alias ga='git add'
 alias gp='git push'
-alias gl='git log'
-alias gs='git status'
+alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
+alias gs='git status -sb'
 alias gd='git diff'
 alias gdc='git diff --cached'
 alias gm='git commit -m'
 alias gma='git commit -am'
-alias gb='git branch'
+alias gb='git branch -a'
 alias gc='git checkout'
+alias gt='git tag -l'
 alias gra='git remote add'
 alias grr='git remote rm'
 alias gru='git remote update'
