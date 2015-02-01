@@ -22,16 +22,15 @@ Plugin 'gmarik/Vundle.vim'
 
 " Snippet engine
 Plugin 'SirVer/ultisnips'
-let g:UltiSnipsListSnippets="<c-s>"
-let g:UltiSnipsExpandTrigger="<c-d>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 " Collection of snippets
 Plugin 'honza/vim-snippets'
 
 " Status bar
-Plugin 'bling/vim-airline'
+Plugin 'itchyny/lightline.vim'
 
 " Git in the line number column
 Plugin 'airblade/vim-gitgutter'
@@ -48,6 +47,8 @@ let g:sysntastic_check_on_open=1
 
 " Autocompletion
 Plugin 'Valloric/YouCompleteMe'
+let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
 
 " List of undos
 Plugin 'sjl/gundo.vim'
@@ -86,10 +87,6 @@ let g:indent_guides_guide_size = 1
 Plugin 'nathanaelkane/vim-indent-guides'
 map <silent><F7> <leader>ig
 
-" File tree
-Plugin 'scrooloose/nerdtree'
-map <c-n> :NERDTree<CR>
-
 " Fuzzy file finder
 Plugin 'kien/ctrlp.vim'
 let g:ctrlp_map = '<c-p>'
@@ -127,9 +124,6 @@ let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
-" Close NERDTree when exiting
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " .md is for Markdown
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
