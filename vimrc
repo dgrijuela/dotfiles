@@ -39,6 +39,8 @@ Plugin 'airblade/vim-gitgutter'
 " Autosave
 Plugin 'vim-scripts/vim-auto-save'
 let g:auto_save = 1
+let g:auto_save_in_insert_mode = 0
+let g:auto_save_silent = 1
 
 " Syntax checker
 Plugin 'scrooloose/syntastic'
@@ -72,7 +74,6 @@ Plugin 'tpope/vim-haml'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'elzr/vim-json' " Distinct highlighting for keys and values
-
 
 " Automatic closing quote, bracket, or whatever
 Plugin 'Raimondi/delimitMate'
@@ -118,8 +119,14 @@ call matchadd('ColorColumn', '\%81v', 100)
 " Use :w!! to write to a file using sudo if you forgot to open it that way
 cmap w!! %!sudo tee > /dev/null %
 
-" Enable copying to clipboard using `CTRL + c`
-map <C-c> y:e ~/clipsongzboard<CR>P:w !pbcopy<CR><CR>:bdelete!<CR>
+" Syntastic configuration
+let g:syntastic_enable_signs=1
+let g:syntastic_auto_jump=1
+let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
 " Close NERDTree when exiting
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
