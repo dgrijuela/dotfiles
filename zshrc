@@ -1,12 +1,21 @@
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="dgrijuela"
 
+export LC_CTYPE=en_US.UTF-8
+export LANG=en_US.UTF-8
 COMPLETION_WAITING_DOTS="true"
 
 source $ZSH/oh-my-zsh.sh
 plugins=(git bundler brew gem)
 
 # Aliases
+
+## General
+alias cp="cp -iv" # v is for verbose, i is to ask confirmation to override
+alias rm="rm -iv"
+alias mv="mv -iv"
+alias ls="ls -Fgh" # f is for file types, g to colorize, h to follow symbolic linkks
+alias la="ls -al" # same with hidden files
 
 ## Git aliases
 alias ga='git add'
@@ -51,6 +60,14 @@ alias put="curl -i -X PUT"
 qfind () {
   find . -exec grep -l -s $1 {} \;
   return 0
+}
+
+# Serve current directory
+serve() {
+  port="${1:-3000}"
+  echo "Serving on http://localhost:$port"
+  echo "\n\n"
+  ruby -run -e httpd . -p $port
 }
 
 # Use vim as editor if present
