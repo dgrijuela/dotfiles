@@ -44,6 +44,11 @@ let g:auto_save_silent = 1
 " Syntax checker
 Plugin 'scrooloose/syntastic'
 let g:sysntastic_check_on_open=1
+let g:syntastic_enable_signs=1
+let g:syntastic_auto_jump=1
+let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
+let g:syntastic_ruby_checkers = ['rubocop', 'mri']
+let g:syntastic_ruby_rubocop_exec = "~/.rvm/rubies/ruby-2.2.0/bin/ruby" "~/.rvm/gems/ruby-2.2.0/bin/rubocop"
 
 " Autocompletion
 Plugin 'Valloric/YouCompleteMe'
@@ -80,7 +85,7 @@ Plugin 'elzr/vim-json' " Distinct highlighting for keys and values
 Plugin 'Raimondi/delimitMate'
 
 " Change surrounds
-Plugin 'tpope/vim-surround' " cs\"' without the \ to change double quotes for single
+Plugin 'tpope/vim-surround' " cs'<p> to change single quote surrounds for <p>
 
 " Show indent lines
 let g:indent_guides_guide_size = 1
@@ -115,11 +120,6 @@ call matchadd('ColorColumn', '\%81v', 100)
 
 " Use :w!! to write to a file using sudo if you forgot to open it that way
 cmap w!! %!sudo tee > /dev/null %
-
-" Syntastic configuration
-let g:syntastic_enable_signs=1
-let g:syntastic_auto_jump=1
-let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
