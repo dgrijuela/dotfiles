@@ -35,12 +35,6 @@ Plugin 'itchyny/lightline.vim'
 " Git in the line number column
 Plugin 'airblade/vim-gitgutter'
 
-" Autosave
-Plugin 'vim-scripts/vim-auto-save'
-let g:auto_save = 1
-let g:auto_save_in_insert_mode = 0
-let g:auto_save_silent = 1
-
 " Syntax checker
 Plugin 'scrooloose/syntastic'
 let g:sysntastic_check_on_open=1
