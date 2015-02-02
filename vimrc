@@ -66,6 +66,7 @@ let g:user_emmet_expandabbr_key = '<c-e>'
 
 " JavaScript
 Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 
 " Rails
 Plugin 'tpope/vim-rails'
