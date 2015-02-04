@@ -56,6 +56,9 @@ alias post="curl -i -X POST"
 alias get="curl -i -X GET"
 alias put="curl -i -X PUT"
 
+## Private
+source ~/.private_aliases
+
 # Quickly find files that contain a string in a directory
 qfind () {
   find . -exec grep -l -s $1 {} \;
