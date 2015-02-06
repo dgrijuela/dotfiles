@@ -3,7 +3,6 @@ filetype off
 
 set t_Co=256
 set mouse=a
-set autochdir " opens current directory with :e.
 syntax enable
 set background=dark
 colorscheme default
