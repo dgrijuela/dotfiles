@@ -75,6 +75,7 @@ Plugin 'tpope/vim-haml'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'elzr/vim-json' " Distinct highlighting for keys and values
+Plugin 'lervag/vim-latex'
 
 " Automatic closing quote, bracket, or whatever
 Plugin 'Raimondi/delimitMate'
