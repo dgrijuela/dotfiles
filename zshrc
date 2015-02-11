@@ -88,7 +88,7 @@ if [ -f $HOME/.profile ]; then
   source $HOME/.profile
 fi
 
-export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$PATH:$HOME/.rvm/bin:/usr/local/go/bin"
 
 # Go to code folder by default
 cd ~/code
