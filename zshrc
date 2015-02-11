@@ -18,11 +18,12 @@ alias ls="ls -Fgh" # f is for file types, g to colorize, h to follow symbolic li
 alias la="ls -al" # same with hidden files
 
 ## Git aliases
+alias git='hub'
 alias ga='git add'
 alias gp='git push'
 alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
 alias gs='git status -sb'
-alias gd='git diff'
+alias gd='git diff --color-words'
 alias gdc='git diff --cached'
 alias gm='git commit -m'
 alias gma='git commit -am'
