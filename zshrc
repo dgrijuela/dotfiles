@@ -18,7 +18,6 @@ alias ls="ls -Fgh" # f is for file types, g to colorize, h to follow symbolic li
 alias la="ls -al" # same with hidden files
 
 ## Git aliases
-alias git='hub'
 alias ga='git add'
 alias gp='git push'
 alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
@@ -89,7 +88,7 @@ if [ -f $HOME/.profile ]; then
   source $HOME/.profile
 fi
 
-export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$PATH:$HOME/.rvm/bin:/usr/local/go/bin"
 
 # Go to code folder by default
 cd ~/code
