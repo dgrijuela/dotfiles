@@ -32,6 +32,10 @@ Plugin 'honza/vim-snippets'
 " Status bar
 Plugin 'itchyny/lightline.vim'
 
+" File tree
+Plugin 'scrooloose/nerdtree'
+map <c-n> :NERDTree<CR>
+
 " Git in the line number column
 Plugin 'airblade/vim-gitgutter'
 
