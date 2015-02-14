@@ -104,9 +104,6 @@ call vundle#end()
 
 filetype plugin indent on
 
-" Fuck semicolon
-nnoremap ; :
-
 " Open current file in Google Chrome
 nmap <silent> <leader>g :!google-chrome % &
 
