@@ -12,7 +12,6 @@ plugins=(git bundler brew gem)
 
 ## General
 alias cp="cp -iv" # v is for verbose, i is to ask confirmation to override
-alias rm="rm -iv"
 alias mv="mv -iv"
 alias ls="ls -Fgh" # f is for file types, g to colorize, h to follow symbolic linkks
 alias la="ls -al" # same with hidden files
