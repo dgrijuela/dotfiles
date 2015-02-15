@@ -32,6 +32,11 @@ Plugin 'honza/vim-snippets'
 " Status bar
 Plugin 'itchyny/lightline.vim'
 
+" File tree
+Plugin 'scrooloose/nerdtree'
+map <c-n> :NERDTree<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif " Close it when exiting main
+
 " Git in the line number column
 Plugin 'airblade/vim-gitgutter'
 
