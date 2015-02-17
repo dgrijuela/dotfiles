@@ -4,6 +4,7 @@ filetype off
 set t_Co=256
 set mouse=a
 syntax enable
+set regexpengine=1
 set background=dark
 colorscheme default
 
