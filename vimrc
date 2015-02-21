@@ -37,6 +37,7 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'scrooloose/nerdtree'
 map <c-n> :NERDTree<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif " Close it when exiting main
+let NERDTreeQuitOnOpen=1
 
 " Git in the line number column
 Plugin 'airblade/vim-gitgutter'
