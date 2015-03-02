@@ -80,6 +80,7 @@ Plugin 'tpope/vim-rails'
 " Support for other languages
 Plugin 'tpope/vim-haml'
 Plugin 'kchmck/vim-coffee-script'
+let coffee_linter = '/usr/local/lib/node_modules/coffeelint/bin/coffeelint'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'elzr/vim-json' " Distinct highlighting for keys and values
 Plugin 'lervag/vim-latex'
