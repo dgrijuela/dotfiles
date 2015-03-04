@@ -30,6 +30,7 @@ elif [ "$(uname)" == "Darwin" ]; then
   echo "if vim doesn't work, brew unlink python"
 fi
 cd ~/.vim/bundle/YouCompleteMe
+apt-get install -y python-dev
 ./install.sh --clang-completer
 
 echo "Installing zsh and making it the default shell"
