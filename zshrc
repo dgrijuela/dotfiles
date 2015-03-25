@@ -12,6 +12,7 @@ plugins=(git bundler brew gem)
 
 ## General
 alias v="vim"
+alias e="emacs -nw"
 alias cp="cp -iv" # v is for verbose, i is to ask confirmation to override
 alias mv="mv -iv"
 alias ls="ls -Fgh" # f is for file types, g to colorize, h to follow symbolic linkks
