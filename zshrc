@@ -3,7 +3,7 @@ ZSH_THEME="dgrijuela"
 
 export LC_CTYPE=en_US.UTF-8
 export LANG=en_US.UTF-8
-COMPLETION_WAITING_DOTS="true"
+export TERM=xterm-256color
 
 source $ZSH/oh-my-zsh.sh
 plugins=(git bundler brew gem)
@@ -27,6 +27,7 @@ alias gd='git diff --color-words'
 alias gdc='git diff --cached'
 alias gm='git commit -m'
 alias gma='git commit -am'
+alias gme='git merge'
 alias gb='git branch -a'
 alias gc='git checkout'
 alias gt='git tag -l'
