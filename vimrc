@@ -1,6 +1,4 @@
 set nocompatible
-filetype off
-
 set t_Co=256
 set mouse=a
 syntax enable
@@ -10,6 +8,8 @@ colorscheme default
 
 " Set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
+
+filetype off
 
 """"""""""""""""""""""""""""""""""""
 " Beginning of plugins section
@@ -23,9 +23,22 @@ Plugin 'gmarik/Vundle.vim'
 
 " Snippet engine
 Plugin 'SirVer/ultisnips'
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+" Autocompletion
+Plugin 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
+
+" YouCompleteMe and UltiSnips compatibility, with the help of supertab
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsEditSplit="vertical"
+
+let g:ycm_key_list_select_completion   = ['<C-j>', '<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
+
+Plugin 'ervandew/supertab'
+let g:SuperTabDefaultCompletionType    = '<C-n>'
+let g:SuperTabCrMapping                = 0
 
 " Collection of snippets
 Plugin 'honza/vim-snippets'
@@ -51,11 +64,6 @@ let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 let g:syntastic_ruby_checkers = ['rubocop', 'mri']
 let g:syntastic_ruby_rubocop_exec = "~/.rvm/rubies/ruby-2.2.0/bin/ruby" "~/.rvm/gems/ruby-2.2.0/bin/rubocop"
 
-" Autocompletion
-Plugin 'Valloric/YouCompleteMe'
-let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
-
 " List of undos
 Plugin 'sjl/gundo.vim'
 nnoremap <F5> :GundoToggle<CR>
@@ -71,11 +79,10 @@ Plugin 'mattn/emmet-vim'
 let g:user_emmet_expandabbr_key = '<c-e>'
 
 " JavaScript
+Plugin 'jelera/vim-javascript-syntax'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
-
-" Rails
-Plugin 'tpope/vim-rails'
+Plugin 'marijnh/tern_for_vim'
 
 " Support for other languages
 Plugin 'tpope/vim-haml'
@@ -87,8 +94,18 @@ Plugin 'lervag/vim-latex'
 " Automatic closing quote, bracket, or whatever
 Plugin 'Raimondi/delimitMate'
 
+" Align lines from character chosen
+Plugin 'godlygeek/tabular' " :,Tab /: to align all semicolons
+
 " Change surrounds
 Plugin 'tpope/vim-surround' " cs'<p> to change single quote surrounds for <p>
+
+" Auto increment numbers and dates in visual block
+Plugin 'VisIncr'
+
+" Display TODO from different opened files.
+Plugin 'TaskList.vim'
+map <Leader>to <Plug>TaskList
 
 " Show indent lines
 let g:indent_guides_guide_size = 1
@@ -148,6 +165,10 @@ highlight GitGutterDelete ctermfg=red
 highlight GitGutterChangeDelete ctermfg=yellow
 highlight clear SignColumn
 
+" Create Blank Newlines and stay in Normal mode
+nmap <silent> Zj o<Esc>
+nmap <silent> Zk O<Esc>
+
 " Display settings
 set completefunc=syntaxcomplete#Complete
 set cursorline
@@ -166,6 +187,7 @@ set noswapfile
 set confirm                     " dialog when :w or :q fails
 set hidden                      " remember undo after quitting
 set history=50                  " keep 50 lines of command history
+set matchpairs+=<:>
 
 " Whitespace
 set nowrap                      " don't wrap lines
