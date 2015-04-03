@@ -68,6 +68,9 @@ let g:syntastic_ruby_rubocop_exec = "~/.rvm/rubies/ruby-2.2.0/bin/ruby" "~/.rvm/
 Plugin 'sjl/gundo.vim'
 nnoremap <F5> :GundoToggle<CR>
 
+" Highlight whitespace
+Plugin 'ntpeters/vim-better-whitespace'
+
 " Git inside Vim
 Plugin 'tpope/vim-fugitive'
 
@@ -164,10 +167,6 @@ highlight GitGutterChange ctermfg=yellow
 highlight GitGutterDelete ctermfg=red
 highlight GitGutterChangeDelete ctermfg=yellow
 highlight clear SignColumn
-
-" Create Blank Newlines and stay in Normal mode
-nmap <silent> Zj o<Esc>
-nmap <silent> Zk O<Esc>
 
 " Display settings
 set completefunc=syntaxcomplete#Complete
