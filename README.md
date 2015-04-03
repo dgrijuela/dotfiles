@@ -1,7 +1,7 @@
 Welcome to my dotfiles
 ========
 
-Just clone this repo **in your home directory** and execute the script with ```sh create_symlinks.sh```
+Just clone this repo **in your home directory** and execute the script with ```sh install.sh```
 
 You just have to change gitconfig with your name and email
 
