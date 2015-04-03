@@ -76,6 +76,14 @@ serve() {
   ruby -run -e httpd . -p $port
 }
 
+# Change file extensions recursively in current directory
+# $ change-extension erb haml
+function change-extension() {
+  foreach f (**/*.$1)
+    mv $f $f:r.$2
+  end
+}
+
 # Use vim as editor if present
 if [ -f /usr/bin/vim ]; then
   export EDITOR=/usr/bin/vim
