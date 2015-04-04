@@ -1,7 +1,7 @@
 set nocompatible
 set t_Co=256
 set mouse=a
-syntax enable
+syntax on
 set regexpengine=1
 set background=dark
 colorscheme default
@@ -81,11 +81,21 @@ Plugin 'skwp/greplace.vim'
 Plugin 'mattn/emmet-vim'
 let g:user_emmet_expandabbr_key = '<c-e>'
 
+" Make . repeat plugins maps
+Plugin 'tpope/vim-repeat'
+
+" See what you are pasting
+Plugin 'junegunn/vim-peekaboo'
+
 " JavaScript
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'marijnh/tern_for_vim'
+
+" Clojure
+Plugin 'luochen1990/rainbow'
+let g:rainbow_active = 1
 
 " Support for other languages
 Plugin 'tpope/vim-haml'
@@ -93,12 +103,13 @@ Plugin 'kchmck/vim-coffee-script'
 let coffee_linter = '/usr/local/lib/node_modules/coffeelint/bin/coffeelint'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'lervag/vim-latex'
+Plugin 'othree/html5.vim'
 
 " Automatic closing quote, bracket, or whatever
 Plugin 'Raimondi/delimitMate'
 
 " Align lines from character chosen
-Plugin 'godlygeek/tabular' " :,Tab /: to align all semicolons
+Plugin 'godlygeek/tabular' " :Tab /: to align all semicolons
 
 " Change surrounds
 Plugin 'tpope/vim-surround' " cs'<p> to change single quote surrounds for <p>
@@ -154,6 +165,9 @@ set statusline+=%*
 ".md & .md.erb is for Markdown
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd BufNewFile,BufReadPost *.md.erb set filetype=markdown
+
+" Don't add the comment prefix when I hit enter or o/O on a comment line.
+autocmd FileType * setlocal formatoptions-=r formatoptions-=o
 
 " This is for :Gdiff
 highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
