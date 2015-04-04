@@ -96,6 +96,10 @@ Plugin 'marijnh/tern_for_vim'
 " Clojure
 Plugin 'luochen1990/rainbow'
 let g:rainbow_active = 1
+Plugin 'tpope/vim-fireplace'
+Plugin 'guns/vim-clojure-static'
+Plugin 'guns/vim-clojure-highlight'
+Plugin 'tpope/vim-leiningen'
 
 " Support for other languages
 Plugin 'tpope/vim-haml'
