@@ -109,6 +109,9 @@ Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'lervag/vim-latex'
 Plugin 'othree/html5.vim'
 
+" Move between vim panes and tmux splits
+Plugin 'christoomey/vim-tmux-navigator'
+
 " Automatic closing quote, bracket, or whatever
 Plugin 'Raimondi/delimitMate'
 

@@ -3,11 +3,11 @@
 # This script creates symlinks from the home directory to my
 # desired dotfiles which are in ~/dotfiles
 
-dir=~/dotfiles                    # absolute paths
-olddir=~/dotfiles_old             # old dotfiles backup directory
-files="vimrc zshrc gitconfig gitexcludes"     # list of files/folders to symlink in ~
-theme=dgrijuela.zsh-theme         # custom theme
-plugin=dgrijuela.plugin.zsh       # custom plugin
+dir=~/dotfiles                                      # absolute paths
+olddir=~/dotfiles_old                               # old dotfiles backup directory
+files="vimrc zshrc tmux.conf gitconfig gitexcludes" # list of files/folders to symlink in ~
+theme=dgrijuela.zsh-theme                           # custom theme
+plugin=dgrijuela.plugin.zsh                         # custom plugin
 
 echo "Creating $olddir to backup any existing dotfiles in ~"
 mkdir -p $olddir
