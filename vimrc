@@ -84,6 +84,9 @@ let g:user_emmet_expandabbr_key = '<c-e>'
 " Make . repeat plugins maps
 Plugin 'tpope/vim-repeat'
 
+" Highlight not proper words
+Plugin 'nicholaides/words-to-avoid.vim'
+
 " See what you are pasting
 Plugin 'junegunn/vim-peekaboo'
 
