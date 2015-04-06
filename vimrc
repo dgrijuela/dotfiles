@@ -131,6 +131,10 @@ Plugin 'VisIncr'
 Plugin 'TaskList.vim'
 map <Leader>to <Plug>TaskList
 
+" Markdown preview
+Plugin 'shime/vim-livedown'
+nmap gm :LivedownPreview<CR>
+
 " Show indent lines
 let g:indent_guides_guide_size = 1
 Plugin 'nathanaelkane/vim-indent-guides'

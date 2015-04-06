@@ -52,6 +52,7 @@ if [ "$(uname)" == "Linux" ]; then
   sudo apt-get -y install tmux
 elif [ "$(uname)" == "Darwin" ]; then
   brew install tmux
+  brew install reattach-to-user-namespace
   echo "if vim doesn't work, brew unlink python"
 fi
 
