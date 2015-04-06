@@ -46,3 +46,16 @@ echo "Creating symlinks for my custom theme and plugin for oh-my-zsh"
 ln -s $dir/oh-my-zsh/custom/$theme ~/.oh-my-zsh/custom/$theme
 mkdir ~/.oh-my-zsh/custom/plugins/dgrijuela
 ln -s $dir/oh-my-zsh/custom/plugins/dgrijuela/$plugin ~/.oh-my-zsh/custom/plugins/dgrijuela/$plugin
+
+echo "Installing tmux"
+if [ "$(uname)" == "Linux" ]; then
+  sudo apt-get -y install tmux
+elif [ "$(uname)" == "Darwin" ]; then
+  brew install tmux
+  echo "if vim doesn't work, brew unlink python"
+fi
+
+echo "Cloning tmp (tmux package manager) in tmux folder"
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+echo "Aaaaaaaand it's done"
