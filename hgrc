@@ -1,2 +1,8 @@
 [ui]
 username = Daniel Grijuela <danielgrijuela@gmail.com>
+
+[extensions]
+hgk=
+
+[hgk]
+path=/usr/local/bin/hgk
