@@ -3,6 +3,7 @@ username = Daniel Grijuela <danielgrijuela@gmail.com>
 
 [extensions]
 hgk=
+record=
 
 [hgk]
 path=/usr/local/bin/hgk
