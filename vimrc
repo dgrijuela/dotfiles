@@ -94,7 +94,6 @@ Plugin 'junegunn/vim-peekaboo'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
-Plugin 'marijnh/tern_for_vim'
 
 " Clojure
 Plugin 'luochen1990/rainbow'
