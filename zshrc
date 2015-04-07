@@ -17,6 +17,8 @@ alias cp="cp -iv" # v is for verbose, i is to ask confirmation to override
 alias mv="mv -iv"
 alias ls="ls -Fgh" # f is for file types, g to colorize, h to follow symbolic linkks
 alias la="ls -al" # same with hidden files
+alias google-chrome="/usr/bin/open -a '/Applications/Google Chrome.app/'"
+alias chrome='google-chrome'
 
 ## Git aliases
 alias ga='git add'
