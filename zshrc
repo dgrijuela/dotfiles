@@ -63,7 +63,7 @@ alias put="curl -i -X PUT"
 source ~/.private_aliases
 
 # Quickly find files that contain a string in a directory
-qfind () {
+qfind() {
   find . -exec grep -l -s $1 {} \;
   return 0
 }
@@ -78,7 +78,7 @@ serve() {
 
 # Change file extensions recursively in current directory
 # $ change-extension erb haml
-function change-extension() {
+change-extension() {
   foreach f (**/*.$1)
     mv $f $f:r.$2
   end
