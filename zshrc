@@ -13,6 +13,7 @@ plugins=(git bundler brew gem)
 ## General
 alias v="vim"
 alias e="emacs -nw"
+alias t='tmux'
 alias cp="cp -iv" # v is for verbose, i is to ask confirmation to override
 alias mv="mv -iv"
 alias ls="ls -Fgh" # f is for file types, g to colorize, h to follow symbolic linkks
@@ -102,6 +103,3 @@ if [ -f $HOME/.profile ]; then
 fi
 
 export PATH="$PATH:$HOME/.rvm/bin:/usr/local/go/bin"
-
-# Go to code folder by default
-cd ~/code
