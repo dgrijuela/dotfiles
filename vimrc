@@ -102,6 +102,7 @@ Plugin 'tpope/vim-fireplace'
 Plugin 'guns/vim-clojure-static'
 Plugin 'guns/vim-clojure-highlight'
 Plugin 'tpope/vim-leiningen'
+Plugin 'tpope/vim-sexp-mappings-for-regular-people'
 
 " Support for other languages
 Plugin 'tpope/vim-haml'
