@@ -102,4 +102,4 @@ if [ -f $HOME/.profile ]; then
   source $HOME/.profile
 fi
 
-export PATH="$PATH:$HOME/.rvm/bin:/usr/local/go/bin"
+export PATH="$PATH:$HOME/.rvm/bin:/usr/local/go/bin:/usr/local/share/npm/bin:/usr/local/lib/node_modules"
