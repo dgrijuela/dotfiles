@@ -136,9 +136,7 @@ Plugin 'shime/vim-livedown'
 nmap gm :LivedownPreview<CR>
 
 " Show indent lines
-let g:indent_guides_guide_size = 1
-Plugin 'nathanaelkane/vim-indent-guides'
-map <silent><F7> <leader>ig
+Plugin 'Yggdroot/indentLine'
 
 " Fuzzy file finder
 Plugin 'kien/ctrlp.vim'
