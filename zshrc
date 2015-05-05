@@ -102,11 +102,7 @@ if [ -f $HOME/.profile ]; then
   source $HOME/.profile
 fi
 
-# Node paths
-NPM_PACKAGES="$HOME/.npm-packages/.npm-packages"
-NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
-PATH="$NPM_PACKAGES/bin:$PATH"
-unset MANPATH
-MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
+export NVM_DIR="/Users/dgrijuela/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-export PATH="$PATH:$HOME/.node/bin:$HOME/.rvm/bin:/usr/local/go/bin:/usr/local/share/npm/bin:/usr/local/lib/node_modules"
+export PATH="$PATH:$HOME/.rvm/bin:/usr/local/go/bin"

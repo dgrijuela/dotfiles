@@ -1,9 +1,11 @@
 [ui]
 username = Daniel Grijuela <danielgrijuela@gmail.com>
+editor=vim
 
 [extensions]
 hgk=
 record=
+shelve=
 
 [hgk]
 path=/usr/local/bin/hgk
