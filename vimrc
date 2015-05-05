@@ -1,12 +1,3 @@
-set nocompatible
-set t_Co=256
-set mouse=a
-syntax on
-set regexpengine=1
-set background=dark
-set conceallevel=0 " To see quotes in JSONs
-colorscheme default
-
 " Set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 
@@ -228,3 +219,13 @@ set hlsearch                    " highlight matches
 set incsearch                   " incremental searching
 set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
+
+set nocompatible
+set t_Co=256
+set mouse=a
+syntax on
+set regexpengine=1
+colorscheme default
+
+set background=dark " Better highlighting
+set conceallevel=0 " To see quotes in JSONs
