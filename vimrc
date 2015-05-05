@@ -226,6 +226,5 @@ set mouse=a
 syntax on
 set regexpengine=1
 colorscheme default
-
-set background=dark " Better highlighting
+highlight Search ctermfg=black
 set conceallevel=0 " To see quotes in JSONs
