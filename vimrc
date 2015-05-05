@@ -4,6 +4,7 @@ set mouse=a
 syntax on
 set regexpengine=1
 set background=dark
+set conceallevel=0 " To see quotes in JSONs
 colorscheme default
 
 " Set the runtime path to include Vundle and initialize
