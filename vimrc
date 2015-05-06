@@ -101,8 +101,9 @@ Plugin 'tpope/vim-haml'
 Plugin 'kchmck/vim-coffee-script'
 let coffee_linter = '/usr/local/lib/node_modules/coffeelint/bin/coffeelint'
 Plugin 'cakebaker/scss-syntax.vim'
-Plugin 'lervag/vim-latex'
 Plugin 'othree/html5.vim'
+Plugin 'elzr/vim-json'
+let g:vim_json_syntax_conceal = 0
 
 " Move between vim panes and tmux splits
 Plugin 'christoomey/vim-tmux-navigator'
@@ -227,4 +228,3 @@ syntax on
 set regexpengine=1
 colorscheme default
 highlight Search ctermfg=black
-set conceallevel=0 " To see quotes in JSONs
