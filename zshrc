@@ -103,7 +103,7 @@ if [ -f $HOME/.profile ]; then
 fi
 
 # Source nvm if present
-if [ -f $HOME/.nvm ]; then
+if [ -s $HOME/.nvm ]; then
   source $HOME/.nvm/nvm.sh
 fi
 
