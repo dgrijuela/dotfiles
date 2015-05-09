@@ -102,6 +102,9 @@ if [ -f $HOME/.profile ]; then
   source $HOME/.profile
 fi
 
+# Source nvm
+. ~/.nvm/nvm.sh
+
 export NVM_DIR="/Users/dgrijuela/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
