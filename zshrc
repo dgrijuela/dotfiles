@@ -103,9 +103,6 @@ if [ -f $HOME/.profile ]; then
 fi
 
 # Source nvm
-. ~/.nvm/nvm.sh
-
-export NVM_DIR="/Users/dgrijuela/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$HOME/.nvm/nvm.sh" ] && . "$HOME/.nvm/nvm.sh"
 
 export PATH="$PATH:$HOME/.rvm/bin:/usr/local/go/bin"
