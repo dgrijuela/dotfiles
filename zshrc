@@ -102,7 +102,9 @@ if [ -f $HOME/.profile ]; then
   source $HOME/.profile
 fi
 
-# Source nvm
-[ -s "$HOME/.nvm/nvm.sh" ] && . "$HOME/.nvm/nvm.sh"
+# Source nvm if present
+if [ -f $HOME/.nvm ]; then
+  source $HOME/.nvm/nvm.sh
+fi
 
 export PATH="$PATH:$HOME/.rvm/bin:/usr/local/go/bin"
