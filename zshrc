@@ -107,4 +107,4 @@ if [ -s $HOME/.nvm ]; then
   source $HOME/.nvm/nvm.sh
 fi
 
-export PATH="$PATH:$HOME/.rvm/bin:/usr/local/go/bin"
+export PATH="$PATH:$HOME/.rvm/bin:/usr/local/go/bin:$HOME/npm-global/bin"

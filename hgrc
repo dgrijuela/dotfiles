@@ -6,6 +6,7 @@ editor=vim
 hgk=
 record=
 shelve=
+purge=
 
 [hgk]
 path=/usr/local/bin/hgk
