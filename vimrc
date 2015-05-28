@@ -102,6 +102,7 @@ Plugin 'kchmck/vim-coffee-script'
 let coffee_linter = '/usr/local/lib/node_modules/coffeelint/bin/coffeelint'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'othree/html5.vim'
+Plugin 'groenewege/vim-less'
 Plugin 'elzr/vim-json'
 let g:vim_json_syntax_conceal = 0
 
