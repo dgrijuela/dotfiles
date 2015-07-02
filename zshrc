@@ -107,4 +107,4 @@ if [ -s $HOME/.nvm ]; then
   [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh  # This loads NVM
 fi
 
-export PATH="$PATH:$HOME/.rvm/bin:/usr/local/go/bin"
+export PATH="$PATH:/usr/local/share/npm/bin/:$HOME/.rvm/bin:/usr/local/go/bin"
