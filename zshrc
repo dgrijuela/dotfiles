@@ -104,7 +104,7 @@ fi
 
 # Source nvm if present
 if [ -s $HOME/.nvm ]; then
-  source $HOME/.nvm/nvm.sh
+  [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh  # This loads NVM
 fi
 
-export PATH="$PATH:$HOME/.rvm/bin:/usr/local/go/bin:$HOME/npm-global/bin"
+export PATH="$PATH:$HOME/.rvm/bin:/usr/local/go/bin:$HOME/npm-global/bin:/usr/local/share/npm/bin/"
