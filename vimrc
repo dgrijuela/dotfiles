@@ -73,6 +73,9 @@ Plugin 'skwp/greplace.vim'
 Plugin 'mattn/emmet-vim'
 let g:user_emmet_expandabbr_key = '<c-e>'
 
+" Multiple select
+Plugin 'terryma/vim-multiple-cursors'
+
 " Make . repeat plugins maps
 Plugin 'tpope/vim-repeat'
 
