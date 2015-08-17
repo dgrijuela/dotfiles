@@ -49,13 +49,13 @@ let NERDTreeQuitOnOpen=1
 Plugin 'airblade/vim-gitgutter'
 
 " Syntax checker
-Plugin 'scrooloose/syntastic'
-let g:sysntastic_check_on_open=1
-let g:syntastic_enable_signs=1
-let g:syntastic_auto_jump=1
-let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
-let g:syntastic_ruby_checkers = ['rubocop', 'mri']
-let g:syntastic_ruby_rubocop_exec = "~/.rvm/rubies/ruby-2.2.0/bin/ruby" "~/.rvm/gems/ruby-2.2.0/bin/rubocop"
+Plugin 'benekastah/neomake'
+let g:neomake_javascript_jshint_maker = {
+    \ 'args': ['--verbose'],
+    \ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
+    \ }
+let g:neomake_javascript_enabled_makers = ['jshint']
+autocmd! BufWritePost * Neomake
 
 " List of undos
 Plugin 'sjl/gundo.vim'
@@ -173,6 +173,9 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+" Terminal mode remaps
+tnoremap <Esc> <C-\><C-n>
+
 ".md & .md.erb is for Markdown
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd BufNewFile,BufReadPost *.md.erb set filetype=markdown
@@ -228,7 +231,6 @@ set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 
 set pastetoggle=<F3>
-set nocompatible
 set t_Co=256
 set mouse=a
 syntax on
