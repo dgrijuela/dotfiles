@@ -48,13 +48,23 @@ let NERDTreeQuitOnOpen=1
 Plugin 'airblade/vim-gitgutter'
 
 " Syntax checker
-Plugin 'scrooloose/syntastic'
-let g:sysntastic_check_on_open=1
-let g:syntastic_enable_signs=1
-let g:syntastic_auto_jump=1
-let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
-let g:syntastic_ruby_checkers = ['rubocop', 'mri']
-let g:syntastic_ruby_rubocop_exec = "~/.rvm/rubies/ruby-2.2.0/bin/ruby" "~/.rvm/gems/ruby-2.2.0/bin/rubocop"
+if has('nvim')
+  Plugin 'benekastah/neomake'
+  let g:neomake_javascript_jshint_maker = {
+        \ 'args': ['--verbose'],
+        \ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
+        \ }
+  let g:neomake_javascript_enabled_makers = ['jshint']
+  autocmd! BufWritePost * Neomake
+else
+  Plugin 'scrooloose/syntastic'
+  let g:sysntastic_check_on_open=1
+  let g:syntastic_enable_signs=1
+  let g:syntastic_auto_jump=1
+  let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
+  let g:syntastic_ruby_checkers = ['rubocop', 'mri']
+  let g:syntastic_ruby_rubocop_exec = "~/.rvm/rubies/ruby-2.2.0/bin/ruby" "~/.rvm/gems/ruby-2.2.0/bin/rubocop"
+endif
 
 " List of undos
 Plugin 'sjl/gundo.vim'
@@ -157,6 +167,17 @@ call vundle#end()
 """"""""""""""""""""""""
 
 filetype plugin indent on
+
+" Terminal mode remaps
+if has('nvim')
+  tnoremap <Esc> <C-\><C-n>
+endif
+
+" For splits
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 " Open current file in Google Chrome
 nmap <silent> <leader>g :!google-chrome % &

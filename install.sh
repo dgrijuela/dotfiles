@@ -21,10 +21,7 @@ done
 
 echo "Cloning vundle inside vim to install vim plugins and then installing them"
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-git clone https://github.com/gmarik/Vundle.vim.git ~/.nvim/bundle/Vundle.vim # neovim yay!
-vim +PluginInstall +qall
-nvim +PluginInstall +qall # neovim yay!
-pip install neovim # this is needed so neovim gets python
+
 echo "Installing neovim and YouCompleteMe plugin"
 if [ "$(uname)" == "Linux" ]; then
   sudo add-apt-repository ppa:neovim-ppa/unstable
@@ -34,8 +31,15 @@ elif [ "$(uname)" == "Darwin" ]; then
   brew install cmake python
   echo "if vim doesn't work, brew unlink python"
 fi
+
+# Neovim stuff
+mv ~/.nvimrc ~/dotfiles_old/
+ln -s $dir/vimrc ~/.nvimrc
+ln -s $dir/.vim $dir/.nvim
+v +PluginInstall +qall
+pip install neovim # this is needed so neovim gets python
+
 cd ~/.vim/bundle/YouCompleteMe
-apt-get install -y python-dev
 ./install.sh --clang-completer
 
 echo "Installing zsh and making it the default shell"
