@@ -1,5 +1,6 @@
 " Set the runtime path to include Vundle and initialize
-set rtp+=~/.nvim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#rc('~/.nvim/bundle')
 
 filetype off
 

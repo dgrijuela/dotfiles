@@ -21,10 +21,15 @@ done
 
 echo "Cloning vundle inside vim to install vim plugins and then installing them"
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+git clone https://github.com/gmarik/Vundle.vim.git ~/.nvim/bundle/Vundle.vim # neovim yay!
 vim +PluginInstall +qall
-echo "Installing vim plugin YouCompleteMe"
+nvim +PluginInstall +qall # neovim yay!
+pip install neovim # this is needed so neovim gets python
+echo "Installing neovim and YouCompleteMe plugin"
 if [ "$(uname)" == "Linux" ]; then
-  sudo apt-get -y install python-dev cmake
+  sudo add-apt-repository ppa:neovim-ppa/unstable
+  sudo apt-get update
+  sudo apt-get -y install neovim python-dev python-pip python3-dev python3-pip cmake
 elif [ "$(uname)" == "Darwin" ]; then
   brew install cmake python
   echo "if vim doesn't work, brew unlink python"
