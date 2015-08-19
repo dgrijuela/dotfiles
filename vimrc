@@ -40,7 +40,7 @@ Plugin 'itchyny/lightline.vim'
 
 " File tree
 Plugin 'scrooloose/nerdtree'
-nnoremap <leader>d :NERDTreeToggle<CR>
+nnoremap <leader>a :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif " Close it when exiting main
 let NERDTreeQuitOnOpen=1
 
@@ -233,4 +233,5 @@ set mouse=a
 syntax on
 set regexpengine=1
 colorscheme default
+let mapleader=","
 highlight Search ctermfg=black
