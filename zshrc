@@ -11,7 +11,7 @@ plugins=(git bundler brew gem)
 # Aliases
 
 ## General
-alias v="vim"
+alias v="nvim"
 alias e="emacs -nw"
 alias t='tmux'
 alias cp="cp -iv" # v is for verbose, i is to ask confirmation to override
