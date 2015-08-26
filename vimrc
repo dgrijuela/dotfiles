@@ -55,6 +55,7 @@ if has('nvim')
         \ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
         \ }
   let g:neomake_javascript_enabled_makers = ['jshint']
+  let g:neomake_javascript_jscs_options = '--esnext'
   autocmd! BufWritePost * Neomake
 else
   Plugin 'scrooloose/syntastic'
@@ -212,6 +213,18 @@ highlight GitGutterChange ctermfg=yellow
 highlight GitGutterDelete ctermfg=red
 highlight GitGutterChangeDelete ctermfg=yellow
 highlight clear SignColumn
+
+" Go to tab by number
+noremap <leader>1 1gt
+noremap <leader>2 2gt
+noremap <leader>3 3gt
+noremap <leader>4 4gt
+noremap <leader>5 5gt
+noremap <leader>6 6gt
+noremap <leader>7 7gt
+noremap <leader>8 8gt
+noremap <leader>9 9gt
+noremap <leader>0 :tablast<cr>
 
 " Display settings
 set completefunc=syntaxcomplete#Complete
