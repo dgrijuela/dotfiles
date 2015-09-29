@@ -54,8 +54,8 @@ if has('nvim')
         \ 'args': ['--verbose'],
         \ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
         \ }
-  let g:neomake_javascript_enabled_makers = ['jshint']
-  let g:neomake_javascript_jshint_options = '--esnext'
+  let g:neomake_javascript_enabled_makers = ['jscs', 'jshint']
+  let g:neomake_javascript_jscs_options = '--esnext'
   autocmd! BufWritePost * Neomake
 else
   Plugin 'scrooloose/syntastic'
