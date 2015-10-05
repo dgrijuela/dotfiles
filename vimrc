@@ -54,7 +54,7 @@ if has('nvim')
         \ 'args': ['--verbose'],
         \ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
         \ }
-  let g:neomake_javascript_enabled_makers = ['jshint']
+  let g:neomake_javascript_enabled_makers = ['jscs', 'jshint']
   let g:neomake_javascript_jscs_options = '--esnext'
   autocmd! BufWritePost * Neomake
 else
@@ -97,7 +97,7 @@ Plugin 'nicholaides/words-to-avoid.vim'
 Plugin 'junegunn/vim-peekaboo'
 
 " JavaScript
-Plugin 'jelera/vim-javascript-syntax'
+Plugin 'othree/yajs.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 
