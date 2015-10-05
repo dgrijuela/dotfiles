@@ -97,7 +97,7 @@ Plugin 'nicholaides/words-to-avoid.vim'
 Plugin 'junegunn/vim-peekaboo'
 
 " JavaScript
-Plugin 'jelera/vim-javascript-syntax'
+Plugin 'othree/yajs.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 
