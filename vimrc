@@ -68,8 +68,10 @@ else
 endif
 
 " List of undos
-Plugin 'sjl/gundo.vim'
+Plugin 'simnalamburt/vim-mundo'
 nnoremap <F5> :GundoToggle<CR>
+set undofile
+set undodir=~/.vim/undo
 
 " Highlight whitespace
 Plugin 'ntpeters/vim-better-whitespace'
