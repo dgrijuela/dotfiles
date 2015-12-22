@@ -269,4 +269,5 @@ set mouse=a
 syntax on
 set regexpengine=1
 colorscheme default
+let mapleader=","
 highlight Search ctermfg=black
