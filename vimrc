@@ -266,6 +266,7 @@ set pastetoggle=<F3>
 set nocompatible
 set t_Co=256
 set mouse=a
+set synmaxcol=256               " Syntax coloring lines that are too long just slows down the world
 syntax on
 set regexpengine=1
 colorscheme default
