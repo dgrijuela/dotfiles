@@ -201,7 +201,7 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd BufNewFile,BufReadPost *.md.erb set filetype=markdown
 
 ".es6 is for JS
-au BufNewFile,rufRead *.es6 set filetype=javascript
+autocmd BufNewFile,BufReadPost *.es6 set filetype=javascript
 
 " Don't add the comment prefix when I hit enter or o/O on a comment line.
 autocmd FileType * setlocal formatoptions-=r formatoptions-=o
