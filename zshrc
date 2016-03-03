@@ -106,5 +106,7 @@ fi
 if [ -s $HOME/.nvm ]; then
   [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh  # This loads NVM
 fi
+export NVM_DIR=~/.nvm
+. $(brew --prefix nvm)/nvm.sh
 
 export PATH="$PATH:$HOME/.rvm/bin:/usr/local/go/bin:$HOME/npm-global/bin:/usr/local/share/npm/bin/"
