@@ -48,24 +48,15 @@ let NERDTreeQuitOnOpen=1
 Plugin 'airblade/vim-gitgutter'
 
 " Syntax checker
-if has('nvim')
-  Plugin 'benekastah/neomake'
-  let g:neomake_javascript_jshint_maker = {
-        \ 'args': ['--verbose'],
-        \ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
-        \ }
-  let g:neomake_javascript_enabled_makers = ['jscs', 'jshint']
-  let g:neomake_javascript_jscs_options = '--esnext'
-  autocmd! BufWritePost * Neomake
-else
-  Plugin 'scrooloose/syntastic'
-  let g:sysntastic_check_on_open=1
-  let g:syntastic_enable_signs=1
-  let g:syntastic_auto_jump=1
-  let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
-  let g:syntastic_ruby_checkers = ['rubocop', 'mri']
-  let g:syntastic_ruby_rubocop_exec = "~/.rvm/rubies/ruby-2.2.0/bin/ruby" "~/.rvm/gems/ruby-2.2.0/bin/rubocop"
-endif
+Plugin 'benekastah/neomake'
+let g:neomake_javascript_jscs_maker = {
+      \ 'exe': 'jscs',
+      \ 'args': ['--no-color', '--preset', 'airbnb', '--reporter', 'inline', '--esnext'],
+      \ 'errorformat': '%f: line %l\, col %c\, %m',
+      \ }
+let g:neomake_javascript_enabled_makers = ['jscs']
+let g:neomake_ruby_enabled_makers = ['rubocop', 'mri']
+autocmd! BufWritePost * Neomake
 
 " List of undos
 Plugin 'simnalamburt/vim-mundo'
