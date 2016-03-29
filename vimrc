@@ -60,7 +60,7 @@ autocmd! BufWritePost * Neomake
 
 " List of undos
 Plugin 'simnalamburt/vim-mundo'
-nnoremap <F5> :GundoToggle<CR>
+nnoremap <F5> :MundoToggle<CR>
 set undofile
 set undodir=~/.vim/undo
 
