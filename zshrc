@@ -111,3 +111,7 @@ export NVM_DIR=~/.nvm
 
 export PATH="$PATH:$HOME/.rvm/bin:/usr/local/go/bin:$HOME/npm-global/bin:/usr/local/share/npm/bin/"
 eval "$(docker-machine env)"
+
+if [ -f $(brew --prefix)/etc/brew-wrap ];then
+  source $(brew --prefix)/etc/brew-wrap
+fi
