@@ -36,6 +36,8 @@ fi
 mv ~/.nvimrc ~/dotfiles_old/
 ln -s $dir/vimrc ~/.nvimrc
 ln -s ~/.vim ~/.nvim
+mkdir -p ~/.config/neovim
+ln -s ~/.nvimrc ~/.config/neovim/init.vim
 v +PluginInstall +qall
 pip install neovim # this is needed so neovim gets python
 
