@@ -1,6 +1,9 @@
 
 # tap repositories and their packages
 
+tap argon/mas
+brew mas
+
 tap caskroom/cask
 cask android-studio
 cask bittorrent
@@ -27,6 +30,8 @@ cask zoomus
 
 tap caskroom/versions
 cask iterm2-beta
+
+tap homebrew/boneyard
 
 tap homebrew/core
 brew autoconf
@@ -65,7 +70,6 @@ brew libusb
 brew libxml2
 brew libyaml
 brew lzlib
-brew mas
 brew mpfr
 brew nvm
 brew openssl
@@ -86,6 +90,7 @@ brew sqlite
 brew the_silver_searcher
 brew tmux
 brew unrar
+brew vim
 brew watchman
 brew wget
 brew xz
@@ -98,13 +103,15 @@ brew isl011
 brew libmpc08
 brew mpfr2
 
+tap homebrew/versions
+
+tap homebrew/versions
+
 tap neovim/neovim
 brew neovim
 
 tap rcmdnk/file
 brew brew-file
-
-tap argon/mas
 
 # App Store applications
 appstore No installed apps found
