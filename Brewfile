@@ -87,6 +87,7 @@ brew readline
 brew reattach-to-user-namespace
 brew sfcgal
 brew sqlite
+brew ssh-copy-id
 brew the_silver_searcher
 brew tmux
 brew unrar
