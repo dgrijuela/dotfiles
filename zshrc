@@ -57,6 +57,9 @@ alias vd='vagrant destroy'
 alias vs='vagrant ssh'
 alias vh='vagrant halt'
 
+## Docker aliases
+alias dc='docker-compose'
+
 ## Curl aliases
 alias post="curl -i -X POST"
 alias get="curl -i -X GET"

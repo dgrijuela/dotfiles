@@ -23,6 +23,7 @@ cask skype
 cask slack
 cask spotify
 cask vagrant
+cask virtualbox-extension-pack
 cask virtualbox
 cask vlc
 cask xquartz
