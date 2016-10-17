@@ -49,14 +49,14 @@ Plugin 'airblade/vim-gitgutter'
 
 " Syntax checker
 Plugin 'benekastah/neomake'
-let g:neomake_javascript_jscs_maker = {
-      \ 'exe': 'jscs',
-      \ 'args': ['--no-color', '--preset', 'airbnb', '--reporter', 'inline', '--esnext'],
-      \ 'errorformat': '%f: line %l\, col %c\, %m',
-      \ }
-let g:neomake_javascript_enabled_makers = ['jscs']
+let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_open_list = 1
+let g:neomake_javascript_eslint_maker = {
+    \ 'args': ['--no-color', '--format', 'compact', '--config', '~/.eslintrc.json'],
+    \ 'errorformat': '%f: line %l\, col %c\, %m'
+    \ }
 let g:neomake_ruby_enabled_makers = ['rubocop', 'mri']
-autocmd! BufWritePost * Neomake
+"autocmd! BufWritePost * Neomake
 
 " List of undos
 Plugin 'simnalamburt/vim-mundo'
@@ -67,9 +67,6 @@ set undodir=~/.vim/undo
 " Highlight whitespace
 Plugin 'ntpeters/vim-better-whitespace'
 
-" Git inside Vim
-Plugin 'tpope/vim-fugitive'
-
 " Search and replace across many files
 Plugin 'skwp/greplace.vim'
 
@@ -79,15 +76,6 @@ let g:user_emmet_expandabbr_key = '<c-e>'
 
 " Multiple select
 Plugin 'terryma/vim-multiple-cursors'
-
-" Make . repeat plugins maps
-Plugin 'tpope/vim-repeat'
-
-" Highlight not proper words
-Plugin 'nicholaides/words-to-avoid.vim'
-
-" See what you are pasting
-Plugin 'junegunn/vim-peekaboo'
 
 " JavaScript
 Plugin 'othree/yajs.vim'
@@ -104,17 +92,10 @@ Plugin 'tpope/vim-leiningen'
 Plugin 'tpope/vim-sexp-mappings-for-regular-people'
 
 " Support for other languages
-Plugin 'tpope/vim-haml'
-Plugin 'kchmck/vim-coffee-script'
-let coffee_linter = '/usr/local/lib/node_modules/coffeelint/bin/coffeelint'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'othree/html5.vim'
-Plugin 'groenewege/vim-less'
 Plugin 'elzr/vim-json'
 let g:vim_json_syntax_conceal = 0
-
-" Move between vim panes and tmux splits
-Plugin 'christoomey/vim-tmux-navigator'
 
 " Automatic closing quote, bracket, or whatever
 Plugin 'Raimondi/delimitMate'

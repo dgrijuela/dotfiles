@@ -71,3 +71,6 @@ echo "Cloning tmp (tmux package manager) in tmux folder"
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 echo "Aaaaaaaand it's done"
+
+# Emacs keybindings
+gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
