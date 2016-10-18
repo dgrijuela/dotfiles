@@ -58,6 +58,7 @@ alias vs='vagrant ssh'
 alias vh='vagrant halt'
 
 ## Docker aliases
+alias dc='docker-compose'
 alias dcu='docker-compose up'
 alias dcr='docker-compose run'
 alias dcrs='docker-compose run --service-ports'
