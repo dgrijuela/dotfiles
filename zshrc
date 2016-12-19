@@ -100,7 +100,6 @@ fi
 
 # Load RVM into a shell session *as a function* if present
 if [ -f $HOME/.rvm/scripts/rvm ]; then
-  source $HOME/.rvm/scripts/rvm
 fi
 
 # Read .profile if present
@@ -111,12 +110,9 @@ fi
 # Source nvm if present
 if [ -s $HOME/.nvm ]; then
   [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh  # This loads NVM
+  nvm use node
 fi
-export NVM_DIR=~/.nvm
-. $(brew --prefix nvm)/nvm.sh
 
 export PATH="$PATH:$HOME/.rvm/bin:/usr/local/go/bin:$HOME/npm-global/bin:/usr/local/share/npm/bin/"
 
-if [ -f $(brew --prefix)/etc/brew-wrap ];then
-  source $(brew --prefix)/etc/brew-wrap
-fi
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
