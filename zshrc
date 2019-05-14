@@ -4,6 +4,7 @@ ZSH_THEME="dgrijuela"
 export LC_CTYPE=en_US.UTF-8
 export LANG=en_US.UTF-8
 export TERM=xterm-256color
+export LOCAL=true
 
 source $ZSH/oh-my-zsh.sh
 plugins=(git bundler brew gem)
@@ -93,6 +94,12 @@ change-extension() {
   end
 }
 
+# Docker clean shit
+clean_docker_all(){
+ docker rm $(docker ps -a -q)
+ docker rmi -f $(docker images -q)
+}
+
 # Use vim as editor if present
 if [ -f /usr/bin/vim ]; then
   export EDITOR=/usr/bin/vim
@@ -110,9 +117,28 @@ fi
 # Source nvm if present
 if [ -s $HOME/.nvm ]; then
   [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh  # This loads NVM
-  nvm use node
 fi
 
-export PATH="$PATH:$HOME/.rvm/bin:/usr/local/go/bin:$HOME/npm-global/bin:/usr/local/share/npm/bin/"
+export PATH="$PATH:$HOME/.rvm/bin:/usr/local/go/bin:$HOME/npm-global/bin:/usr/local/share/npm/bin/:/usr/local/lib/node_modules"
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="$PATH:$HOME/.rbenv/bin" # Add RVM to PATH for scripting
+
+#export NODE_PATH=$NODE_PATH:`npm root -g`
+
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/kln2p/.nvm/versions/node/v8.9.3/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/kln2p/.nvm/versions/node/v8.9.3/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/kln2p/.nvm/versions/node/v8.9.3/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/kln2p/.nvm/versions/node/v8.9.3/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/kln2p/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/kln2p/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/kln2p/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/kln2p/google-cloud-sdk/completion.zsh.inc'; fi
+
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[[ -f /Users/kln2p/.nvm/versions/node/v8.11.3/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/kln2p/.nvm/versions/node/v8.11.3/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh
